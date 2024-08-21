@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <style>
+        .slider{
+            width: 700px;
+            height: 250px;
+            display: flex;
+            justify-content: space-between;
+            margin: 50px auto;
+        }
+        .main{
+            width: 600px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            order: 2;
+        }
+        .frame{
+            width: 600px;
+            height: 200px;
+            border-radius: 50px;
+            overflow: hidden;
+            
+        }
+        #boxs{
+            width: 1800px;
+            height: 200px;
+            display: flex;
+            transition: 0.5s;
+        }
+        .box{
+            width: 600px;
+            height: 200px;
+            text-align: center;
+            color: #fff;
+            font-size: 2.5em;
+            line-height: 190px;
+        }
+        .box1{
+            background-color: rgba(255, 0, 0, 0.6);
+        }
+        .box2{
+            background-color: rgba(255, 166, 0, 0.6);
+        }
+        .box3{
+            background-color: rgba(220, 220, 0, 0.6);
+        }
+        .buttons{
+            width: 600px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .button{
+            width: 150px;
+            height: 40px;
+            background-color: silver;
+            border-radius: 15px;
+            text-align: center;
+            line-height: 37.5px;
+        }
+        #arrow_left{
+            width: 0;
+            height: 0;
+            border-bottom: 50px solid transparent;
+            border-top: 50px solid transparent;
+            border-left: 50px solid transparent;
+            border-right: 50px solid skyblue;
+            order: 1;
+            margin: 50px 15px 0px -75px;
+        }
+        #arrow_right{
+            width: 0;
+            height: 0;
+            border-bottom: 50px solid transparent;
+            border-top: 50px solid transparent;
+            border-left: 50px solid skyblue;
+            border-right: 50px solid transparent;
+            order: 3;
+            margin: 50px -75px 0px 15px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="slider">
+        <div class="main">
+            <div class="frame">
+                <div Id="boxs">
+                    <div class="box box1">1</div>
+                    <div class="box box2">2</div>
+                    <div class="box box3">3</div>
+                </div>
+            </div>
+            <div class="buttons">
+                <div id="button1" class="button">1</div>
+                <div id="button2" class="button">2</div>
+                <div id="button3" class="button">3</div>
+            </div>
+        </div>
+        <div id="arrow_left"></div>
+        <div id="arrow_right"></div>
+    </div>
+    <script>
+        window.onload = function(){
+            const boxs = document.getElementById('boxs');
+            const button1 = document.getElementById('button1');
+            const button2 = document.getElementById('button2');
+            const button3 = document.getElementById('button3');
+            const arrow_left = document.getElementById('arrow_left');
+            const arrow_right = document.getElementById('arrow_right');
+
+            button1.addEventListener('click', function(){
+                boxs.style.transform = 'translate(0px)';
+            });
+            button2.addEventListener('click', function(){
+                boxs.style.transform = 'translate(-600px)';
+            });
+            button3.addEventListener('click', function(){
+                boxs.style.transform = 'translate(-1200px)';
+            });
+        };
+    </script>
+</body>
+</html>
