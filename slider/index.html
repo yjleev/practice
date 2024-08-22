@@ -97,8 +97,8 @@
                 <div id="button3" class="button">3</div>
             </div>
         </div>
-        <img src="../img/arrow_left.png" alt="img01" id="arrow_left" class="arrow">
-        <img src="../img/arrow_right.png" alt="img01" id="arrow_right" class="arrow">
+        <img src="../img/arrow_left.png" alt="img01" id="arrow_left" class="arrow" arrow_left>
+        <img src="../img/arrow_right.png" alt="img01" id="arrow_right" class="arrow arrow_right">
     </div>
     <script>
         window.onload = function(){
@@ -106,6 +106,7 @@
             const button1 = document.getElementById('button1');
             const button2 = document.getElementById('button2');
             const button3 = document.getElementById('button3'); 
+            const box = document.getElementsByClassName('box');
 
             const frame = document.getElementsByClassName('frame');
             let slidewidth = frame.clientWidth;
@@ -137,13 +138,13 @@
             const arrow_left = document.getElementById('arrow_left');
             const arrow_right = document.getElementById('arrow_right');
             let translate = 0;
-
+            
             arrow_left.addEventListener('mousedown', function(){
                 arrow_left.style.transform = 'scale(0.95)';
-            })
+            });
             arrow_right.addEventListener('mousedown', function(){
                 arrow_right.style.transform = 'scale(0.95)';
-            })
+            });
 
             arrow_left.addEventListener('mouseup', function(){
                 if(translate<=-600){
@@ -151,15 +152,14 @@
                     boxs.style.transform = `translateX(${translate}px)`;
                 }
                 arrow_left.style.transform = 'scale(1)';
-            })
+            });
             arrow_right.addEventListener('mouseup', function(){
                 if(translate>=-600){
                     translate -= 600;
                     boxs.style.transform = `translateX(${translate}px)`;
                 }
                 arrow_right.style.transform = 'scale(1)';
-            })
-
+            });
         }
     </script>
 </body>
