@@ -63,25 +63,17 @@
             text-align: center;
             line-height: 37.5px;
         }
+        .arrow{
+            width: 50px;
+            height: 60px;
+            margin-top: 70px;
+        }
         #arrow_left{
-            width: 0;
-            height: 0;
-            border-bottom: 50px solid transparent;
-            border-top: 50px solid transparent;
-            border-left: 50px solid transparent;
-            border-right: 50px solid skyblue;
             order: 1;
-            margin: 50px 15px 0px -75px;
+
         }
         #arrow_right{
-            width: 0;
-            height: 0;
-            border-bottom: 50px solid transparent;
-            border-top: 50px solid transparent;
-            border-left: 50px solid skyblue;
-            border-right: 50px solid transparent;
             order: 3;
-            margin: 50px -75px 0px 15px;
         }
     </style>
     
@@ -102,28 +94,48 @@
                 <div id="button3" class="button">3</div>
             </div>
         </div>
-        <div id="arrow_left"></div>
-        <div id="arrow_right"></div>
+        <img src="../img/arrow_left.png" alt="img01" id="arrow_left" class="arrow">
+        <img src="../img/arrow_right.png" alt="img01" id="arrow_right" class="arrow">
     </div>
     <script>
         window.onload = function(){
-            const boxs = document.getElementById('boxs');
+            const boxs = document.getElementById('boxs'); 
             const button1 = document.getElementById('button1');
             const button2 = document.getElementById('button2');
-            const button3 = document.getElementById('button3');
-            const arrow_left = document.getElementById('arrow_left');
-            const arrow_right = document.getElementById('arrow_right');
+            const button3 = document.getElementById('button3'); 
 
+            const frame = document.getElementsByClassName('frame');
+            let slidewidth = frame.clientWidth;
+            let slierwidth = boxs.clientWidth;
+  
             button1.addEventListener('click', function(){
-                boxs.style.transform = 'translate(0px)';
+                boxs.style.transform = 'translateX(0px)';
             });
             button2.addEventListener('click', function(){
-                boxs.style.transform = 'translate(-600px)';
+                boxs.style.transform = 'translateX(-600px)';
             });
             button3.addEventListener('click', function(){
-                boxs.style.transform = 'translate(-1200px)';
+                boxs.style.transform = 'translateX(-1200px)';
+                
             });
-        };
+
+            const arrow_left = document.getElementById('arrow_left');
+            const arrow_right = document.getElementById('arrow_right');
+            let translate = 0;
+
+            arrow_left.addEventListener('click', function(){
+                if(translate<=-600){
+                    translate += 600;
+                    boxs.style.transform = `translateX(${translate}px)`;
+                }
+            })
+            arrow_right.addEventListener('click', function(){
+                if(translate>=-600){
+                    translate -= 600;
+                    boxs.style.transform = `translateX(${translate}px)`;
+                }
+            })
+        }
     </script>
 </body>
 </html>
