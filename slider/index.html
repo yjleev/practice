@@ -30,7 +30,7 @@
             border-radius: 50px;
             overflow: hidden;
         }
-        #boxs{
+        #boxes{
             width: 1800px;
             height: 200px;
             display: flex;
@@ -85,7 +85,7 @@
     <div class="slider">
         <div class="main">
             <div class="frame">
-                <div Id="boxs">
+                <div Id="boxes">
                     <div class="box box1">1</div>
                     <div class="box box2">2</div>
                     <div class="box box3">3</div>
@@ -97,21 +97,18 @@
                 <div id="button3" class="button">3</div>
             </div>
         </div>
-        <img src="../img/arrow_left.png" alt="img01" id="arrow_left" class="arrow" arrow_left>
+        <img src="../img/arrow_left.png" alt="img01" id="arrow_left" class="arrow arrow_left">
         <img src="../img/arrow_right.png" alt="img01" id="arrow_right" class="arrow arrow_right">
     </div>
     <script>
         window.onload = function(){
-            const boxs = document.getElementById('boxs'); 
+            const boxes = document.getElementById('boxes'); 
             const button1 = document.getElementById('button1');
             const button2 = document.getElementById('button2');
             const button3 = document.getElementById('button3'); 
             const box = document.getElementsByClassName('box');
+            const yaho = document.querySelectorAll('.box');
 
-            const frame = document.getElementsByClassName('frame');
-            let slidewidth = frame.clientWidth;
-            let slierwidth = boxs.clientWidth;
-            
             button1.addEventListener('mousedown', function(){
                 button1.style.transform = 'scale(0.95)';
             });
@@ -123,15 +120,15 @@
             });
 
             button1.addEventListener('mouseup', function(){
-                boxs.style.transform = 'translateX(0px)';
+                boxes.style.transform = 'translateX(0px)';
                 button1.style.transform = 'scale(1)';
             });
             button2.addEventListener('mouseup', function(){
-                boxs.style.transform = 'translateX(-600px)';
+                boxes.style.transform = 'translateX(-600px)';
                 button2.style.transform = 'scale(1)';
             });
             button3.addEventListener('mouseup', function(){
-                boxs.style.transform = 'translateX(-1200px)';
+                boxes.style.transform = 'translateX(-1200px)';
                 button3.style.transform = 'scale(1)';      
             });
 
@@ -149,14 +146,14 @@
             arrow_left.addEventListener('mouseup', function(){
                 if(translate<=-600){
                     translate += 600;
-                    boxs.style.transform = `translateX(${translate}px)`;
+                    boxes.style.transform = `translateX(${translate}px)`;
                 }
                 arrow_left.style.transform = 'scale(1)';
             });
             arrow_right.addEventListener('mouseup', function(){
                 if(translate>=-600){
                     translate -= 600;
-                    boxs.style.transform = `translateX(${translate}px)`;
+                    boxes.style.transform = `translateX(${translate}px)`;
                 }
                 arrow_right.style.transform = 'scale(1)';
             });
