@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yaho</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        div{
+            width: 400px;
+            height: 35px;
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            transition: .3s ease-in-out;
+        }
+        a{
+            display: block;
+            width: 100px;
+            height: 35px;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            align-content: center;
+            transition: 0.2s;
+        }
+        li>a{
+            background-color: gray;
+        }
+        ul>a{
+            background-color: silver;
+        }
+        div:hover{
+            height: 175px;
+        }
+        li:hover >a{
+            color: #fff;
+            background-color: rgb(75, 75, 75);
+        }
+        a:hover{
+            background-color: rgb(75, 75, 75);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <li id="li">
+            <a href="#" id="yaho">main</a>
+                <ul><a href="#" id="yaho2">sub</a></ul>
+                <ul><a href="#" id="yaho2">sub</a></ul>
+                <ul><a href="#" id="yaho2">sub</a></ul>
+                <ul><a href="#" id="yaho2">sub</a></ul>    
+        </li>
+        <li id="li">
+            <a href="#" id="yaho">main</a>
+                <ul><a href="#" id="yaho2">sub</a></ul>
+                <ul><a href="#" id="yaho2">sub</a></ul>
+                <ul><a href="#" id="yaho2">sub</a></ul>
+                <ul><a href="#" id="yaho2">sub</a></ul>         
+        </li>
+        <li id="li">
+            <a href="#" id="yaho">main</a>
+                <ul><a href="#" id="yaho2">sub</a></ul>
+                <ul><a href="#" id="yaho2">sub</a></ul>
+                <ul><a href="#" id="yaho2">sub</a></ul>
+                <ul><a href="#" id="yaho2">sub</a></ul>         
+        </li>
+        <li id="li">
+            <a href="#" id="yaho">main</a>
+                <ul><a href="#" id="yaho2">sub</a></ul>
+                <ul><a href="#" id="yaho2">sub</a></ul>
+                <ul><a href="#" id="yaho2">sub</a></ul>
+                <ul><a href="#" id="yaho2">sub</a></ul>
+        </li>
+    </div>
+    <script>
+        const yaho2 = document.getElementById('yaho2');
+        const yaho = document.getElementById('yaho');
+
+        yaho2.addEventListener('mouseup', function(){
+            yaho.style.background = '#000';
+        })
+        
+    </script>
+</body>
+</html>
