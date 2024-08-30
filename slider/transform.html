@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>transform</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            .container{
+                margin-top: 50px;
+                width: 100vw;
+                height: 20vh;
+                display: flex;
+                justify-content: space-around;
+            }
+            .bg{
+                width: 100px;
+                height: 100px;
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+            .perspective{
+                perspective:  300px;
+            }
+            .box{
+                width: 100px;
+                height: 100px;
+                background-color: rgb(255, 191, 73);
+            }
+            .box1{
+                animation: rotate 0.5s infinite linear;
+            }
+            @keyframes rotate {
+                100%{transform: rotate(180deg);}
+            }
+            .bg:nth-child(1):hover .box1{
+                animation: rotate 0.5s infinite linear reverse;
+            }
+            .box2{
+                animation: rotateX 0.5s infinite linear;
+            }
+            @keyframes rotateX {
+                100%{transform: rotateX(180deg);}
+            }
+            .bg:nth-child(2):hover .box2{
+                animation: rotateX 0.5s infinite linear reverse;
+            }
+            .box3{
+                animation: rotateY 0.5s infinite linear;
+            }
+            @keyframes rotateY {
+                100%{transform: rotateY(180deg);}
+            }
+            .bg:nth-child(3):hover .box3{
+                animation: rotateY 0.5s infinite linear reverse;
+            }
+            .box4{
+                animation: scale 0.5s infinite linear alternate;
+                position: relative;
+            }
+            @keyframes scale {
+                100%{transform: scale(1.5);}
+            }
+            .bg:nth-child(4):hover .box4{
+                animation: scale2 0.5s infinite linear alternate;
+            }
+            @keyframes scale2 {
+                100%{transform: scale(0.5);}
+            }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+            <div class="bg">
+                <div class="box box1"></div>
+            </div>
+            <div class="bg perspective">
+                <div class="box box2"></div>
+            </div>
+            <div class="bg perspective">
+                <div class="box box3"></div>
+            </div>
+            <div class="bg">
+                <div class="box box4"></div>
+            </div>
+        </div>
+</body>
+</html>
