@@ -101,13 +101,13 @@
         <img src="../img/arrow_right.png" alt="img01" id="arrow_right" class="arrow arrow_right">
     </div>
     <script>
-        window.onload = function(){
             const boxes = document.getElementById('boxes'); 
             const button1 = document.getElementById('button1');
             const button2 = document.getElementById('button2');
             const button3 = document.getElementById('button3'); 
             const box = document.getElementsByClassName('box');
             const yaho = document.querySelectorAll('.box');
+            const arrow = document.querySelectorAll(".arrow");
 
             button1.addEventListener('mousedown', function(){
                 button1.style.transform = 'scale(0.95)';
@@ -136,12 +136,12 @@
             const arrow_right = document.getElementById('arrow_right');
             let translate = 0;
             
-            arrow_left.addEventListener('mousedown', function(){
-                arrow_left.style.transform = 'scale(0.95)';
-            });
-            arrow_right.addEventListener('mousedown', function(){
-                arrow_right.style.transform = 'scale(0.95)';
-            });
+            // arrow_left.addEventListener('mousedown', function(){
+            //     arrow_left.style.transform = 'scale(0.95)';
+            // });
+            // arrow_right.addEventListener('mousedown', function(){
+            //     arrow_right.style.transform = 'scale(0.95)';
+            // });
 
             arrow_left.addEventListener('mouseup', function(){
                 if(translate<=-600){
@@ -157,7 +157,6 @@
                 }
                 arrow_right.style.transform = 'scale(1)';
             });
-        }
     </script>
 </body>
 </html>
